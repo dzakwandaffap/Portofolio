@@ -1,0 +1,338 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+
+html{
+    scroll-behavior: smooth;
+}
+header {
+  height: 50px;
+  
+}
+
+
+
+header ul {
+    margin-top: -50px;
+   display: flex;
+   text-align: center;
+   justify-content: center;
+  
+}
+
+header li {
+    padding: 12px;
+    display: inline-block;
+
+   
+}
+
+header ul li a{
+   color: rgb(135, 135, 135);
+   
+}
+
+header ul li :hover {
+    color: rgb(0, 0, 0);
+    transition: .4s;
+}
+
+a {
+    text-decoration: none;
+}
+.atas{
+    padding-top: -20px;
+}
+
+
+.mobile-menu {
+    float: right;
+    display: none;
+    padding: 18px;
+}
+
+.mobile-menu:hover {
+    cursor: pointer;
+}
+
+
+
+.sidebar {
+   position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -300px;
+    width: 200px;
+    background-color: black;
+    transition: .3s;
+}
+
+
+.sidebar ul li a {
+    color: rgba(234, 232, 232, 0.738);
+}
+
+.sidebar ul li {    
+    padding: 24px;
+    transition: .3s;
+    transition-property: background-color;
+}
+
+
+
+.sidebar ul li a:hover {
+   color: white;
+  ;
+}
+
+#check:checked ~ .sidebar {
+    left: 0;
+}
+
+ li .Contact{
+   
+    border-radius: 25px;
+    background-color: rgba(143, 143, 143, 0.292);
+    
+}
+
+
+
+.page1-isi{
+    text-align: center;
+    margin-top: 220px;
+    margin-bottom: 220px;
+    
+
+}
+
+.page1-isi-hello{
+    font-size: 6rem;
+}
+
+.page1-isi-wanna{
+    font-size: 2rem;
+    letter-spacing: 3px;
+}
+
+.section-pembatas-to-page2{
+    background-color: black;
+   
+    height: 20px;
+}
+
+.img-atas-left{
+    float: left;
+    width: 40px;
+}
+
+#clock{
+float: right;
+padding-right:20px ;
+padding-top: 15px;
+
+}
+
+
+
+.page1-isi-hello{
+    font-family:CastleBegale ;
+}
+
+.page1-isi-wanna{
+    font-family: Gallient;
+}
+
+
+
+
+.mobile-menu{
+   padding-top: 30px;
+}
+
+
+
+
+   
+.header-kudalumping{
+    padding-top: 10px;
+}
+
+.h1-aboutme{
+    text-align: center;
+    font-family: Fonphoria;
+    font-size: 40px
+}
+
+.img-aboutme-dasar{
+    display: flex;
+    padding-right: 20px;
+}
+
+.p-about{
+    font-family: LatoRegular;
+    word-spacing:5px ;
+    letter-spacing: 0.9px;
+    font-size: larger;
+   
+}
+
+#ABOUTME{
+    display: flex;
+    padding-top: 50PX;
+    padding-bottom: 50px;
+    padding-left: 20px;
+}
+
+.section-pembatas-to-page3 {
+    background-color: black;
+    height: 20px;
+}
+
+#SKILL{
+    height: 750px;
+    /* background-color: darkgrey; */
+}
+   
+.h1-skill-upper{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 20px;
+    font-family: Qalgore;
+}
+
+.isi-skill{
+
+display: flex;
+
+
+}
+
+.skill{
+
+width: 200px;
+height: 400px;
+background-color: black;
+
+
+
+}
+
+
+.section-pembatas-to-page4{
+    background-color: black;
+    height: 20px; 
+}
+
+
+
+.Project-UPcoming{
+    font-size: 105px;
+    text-align: center;
+   padding-top: 325px;
+   font-family: Castle Begale;
+}
+
+#PROJECT{
+    height: 750px;
+    /* background-color: darkgrey; */
+
+}
+
+.section-pembatas-to-page5{
+    background-color: black;
+    height: 20px; 
+}
+
+#CONTACT{
+height: 750px;
+}
+
+.h1-contactinformation{
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+.CONTACT-GEDE{
+    background-color: darkgray;
+    height: 60px;
+}
+
+
+
+
+
+/* For @  */
+
+/* Font */
+
+@font-face{
+    font-family: CastleBegale;
+    src: url(Castle\ Begale.otf);
+}
+
+@font-face{
+    font-family: Gallient;
+    src: url(Gallient.ttf);
+}
+
+@font-face{
+    font-family: LatoRegular;
+    src: url(Lato-Regular.ttf);
+}
+
+@font-face{
+    font-family: JakartaSans;
+    src: url(PlusJakartaSans-Regular.ttf);
+}
+
+@font-face{
+    font-family: Qalogre;
+    src: url(Qalogre.otf);
+}
+
+@font-face{
+    font-family: Fonphoria;
+    src:url(Fonphoria.otf) ;
+}
+
+
+/* Responsive HandPHone */
+
+
+@media (max-width: 500px) {
+
+    .mobile-menu {
+        display: block;
+    }
+
+   .atas ul{
+    display: none;
+   }
+
+   header{
+    margin: o;
+   }
+
+  
+   .h1-logos-header{
+    padding-top: 2px;
+    font-size: 30px;
+   }
+
+  
+
+   div#clock{
+    display: flex;
+   }
+
+
+
+
+}
