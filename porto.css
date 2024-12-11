@@ -193,7 +193,7 @@ padding-top: 15px;
 }
 
 #SKILL{
-    height: 750px;
+    height: 550px;
     /* background-color: darkgrey; */
 }
    
@@ -237,7 +237,7 @@ background-color: black;
 }
 
 #PROJECT{
-    height: 750px;
+    height: 400px;
     /* background-color: darkgrey; */
 
 }
@@ -248,7 +248,7 @@ background-color: black;
 }
 
 #CONTACT{
-height: 750px;
+height: 400px;
 }
 
 .h1-contactinformation{
@@ -259,10 +259,6 @@ height: 750px;
     
 }
 
-.CONTACT-GEDE{
-    background-color: darkgray;
-    height: 60px;
-}
 
 
 .resume-section {
@@ -372,4 +368,101 @@ height: 750px;
 
 
 
+}
+
+   
+
+
+.contact-container
+ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Tinggi penuh viewport */
+  gap: 50px; /* Jarak antar kontainer */
+}
+
+/* Styling utama untuk section contact dan skill */
+.contact-section
+{
+  background-color: #fff;
+  color: #333;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 30px; /* Padding lebih banyak agar lebih besar */
+  max-width: 500px; /* Ukuran lebih besar */
+  text-align: center;
+  
+}
+
+/* Efek hover pada bagian contact/skills untuk interaktif */
+
+
+/* Styling untuk link di dalam bagian contact */
+.contact-section a {
+  color: #555;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-section a:hover {
+  color: #000;
+}
+
+
+  
+
+  
+  /* Kontainer utama untuk Soft Skills & Hard Skills */
+  .skill-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px; /* Memberikan jarak horizontal antara dua card */
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+  
+  /* Styling untuk setiap bagian keahlian */
+  .skills-section {
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    max-width: 400px;
+    flex: 1 1 400px; /* Fleksibilitas agar responsif */
+  
+  }
+  
+
+  
+  /* Judul untuk tiap bagian, dengan latar abu-abu gelap */
+  .skills-section h2 {
+    background-color: #555;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+  }
+  
+  /* List Skill dalam tampilan */
+  .list-skills {
+    list-style-type: disc;
+    padding: 10px;
+    line-height: 1.8;
+  }
+  
+  .list-skills li {
+    margin-bottom: 8px;
+  }
+  
+
+@media (max-width: 768px) {
+  .contact-container,
+  .skill-container {
+    flex-direction: column;
+  }
 }
