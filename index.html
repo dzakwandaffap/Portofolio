@@ -15,28 +15,50 @@
                           'castle': ['serif'],
                           'gallient': ['sans-serif']
                       }
-                  
+                   
               }
           }
       </script>
   </head>
   <body class="font-sans bg-gray-50">
       <!-- Header -->
-      <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
-          <input type="checkbox" id="check" class="opacity-0 absolute">
+      <header class="fixed w-full top-0 z-50 bg-white/90 ">
+         
           
           <!-- Sidebar for mobile -->
-          <div class="fixed top-0 bottom-0 left-0 w-64 bg-black transform -translate-x-full " id="sidebar">
-              <h4 class="text-white p-4 text-lg font-semibold">@dzakwandaffap</h4>
-              <nav>
-                  <ul class="space-y-2 ">
-                      <li><a href="#home" class="block px-6 py-3 text-gray-300 hover:text-white hover:bg-gray-800 transition-all duration-300">Home</a></li>
-                      <li><a href="#about" class="block px-6 py-3 text-gray-300 hover:text-white hover:bg-gray-800 transition-all duration-300">About</a></li>
-                      <li><a href="#skill" class="block px-6 py-3 text-gray-300 hover:text-white hover:bg-gray-800 transition-all duration-300">skill</a></li>
-                      <li><a href="#contact" class="block px-6 py-3 text-gray-300 hover:text-white hover:bg-gray-800 transition-all duration-300">Contact</a></li>
-                  </ul>
-              </nav>
-          </div>
+          <div class="fixed top-0 bottom-0 left-0 w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50" id="sidebar">
+    <!-- Header Sidebar -->
+        <div class="flex items-center space-x-3 p-4 border-b border-gray-200">
+            <img src="images/icon-rm.png" width="35">
+            <span class="font-semibold text-lg text-gray-900">dzakwandaffap</span>
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+            <ul class="space-y-1 py-4">
+                <li>
+                    <a href="#home" class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-100 transition-all duration-300 font-medium">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#about" class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-100 transition-all duration-300 font-medium">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="#skill" class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-100 transition-all duration-300 font-medium">
+                        Skill
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact" class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-100 transition-all duration-300 font-medium">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
           <!-- Main header content -->
           <div class="container mx-auto px-4">
