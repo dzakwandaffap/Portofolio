@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dzakwandaffap</title>
+    <link rel="icon" type="image/png" href="images/icon-rm.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        /* Custom styles for modal animations */
+        .modal-overlay {
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        .modal-content {
+            animation: zoomIn 0.3s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes zoomIn {
+            from { 
+                opacity: 0; 
+                transform: scale(0.8) translate(-50%, -50%); 
+            }
+            to { 
+                opacity: 1; 
+                transform: scale(1) translate(-50%, -50%); 
+            }
+        }
+        
+        .modal-image {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        
+        /* Hover effect for clickable images */
+        .clickable-image {
+            cursor: pointer;
+        
+        }
+        
+       
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <header class="w-full">
+        <div>
+            <button type="button" onclick="history.back()" class="flex items-center justify-center p-4 bg-gray-200 hover:bg-gray-300 transform-all duration-300 rounded-full fixed top-4 left-4 z-50">
+                <i class="fa-solid fa-arrow-left text-3xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Modal for full-size image -->
+    <div id="imageModal" class="fixed inset-0 z-[9999] hidden bg-black bg-opacity-80 modal-overlay">
+        <div class="fixed top-1/2 left-1/2 modal-content" style="transform: translate(-50%, -50%);">
+            <img id="modalImage" src="" alt="" class="modal-image rounded-lg shadow-2xl">
+            <button onclick="closeModal()" class="absolute -top-4 -right-4 bg-white hover:bg-gray-100 text-gray-800 rounded-full p-3 shadow-lg transition-all duration-200">
+                <i class="fa-solid fa-times text-xl"></i>
+            </button>
+        </div>
+        <!-- Click outside to close -->
+        <div class="absolute inset-0" onclick="closeModal()"></div>
+    </div>
+
+    <section class="px-6 py-28 max-w-6xl mx-auto">
+        <div class="flex justify-between items-center mb-14">
+            <h2 class="text-3xl font-bold text-gray-800">
+                Weather Radar<br>
+                Check Weather From All Around The World
+            </h2>
+        </div>
+
+        <!-- Grid untuk tablet & desktop -->
+        <div class="hidden md:grid md:grid-cols-2 gap-16 justify-center">
+            <!-- Card 1 -->
+            <div class="relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 mb-10">
+                <img src="images/radar/home.png" 
+                     class="w-full object-cover clickable-image" 
+                     onclick="openModal(this.src, 'Dashboard')"
+                     alt="Dashboard">
+                <div class="p-6 bg-white">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Dashboard</h3>
+                    <p class="text-gray-600 mb-4">Main interface for weather radar monitoring</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 mb-10">
+                <img src="images/radar/result.png" 
+                     class="w-full object-cover clickable-image" 
+                     onclick="openModal(this.src, 'Search Result')"
+                     alt="Result">
+                <div class="p-6 bg-white">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Result of Search</h3>
+                    <p class="text-gray-600 mb-4">Detailed weather information display</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider hanya muncul di mobile -->
+        <div class="block md:hidden">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 mb-10">
+                            <img src="images/radar/home.png" 
+                                 class="w-full object-cover clickable-image" 
+                                 onclick="openModal(this.src, 'Dashboard')"
+                                 alt="Dashboard">
+                            <div class="p-6 bg-white">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Dashboard</h3>
+                                <p class="text-gray-600 mb-4">Main interface for weather radar monitoring</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 mb-10">
+                            <img src="images/radar/result.png" 
+                                 class="w-full object-cover clickable-image" 
+                                 onclick="openModal(this.src, 'Search Result')"
+                                 alt="Result">
+                            <div class="p-6 bg-white">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Result of Search</h3>
+                                <p class="text-gray-600 mb-4">Detailed weather information display</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- pagination -->
+                <div class="swiper-pagination mt-4"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SwiperJS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // Swiper initialization
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+            }
+        });
+
+        // Modal functions
+        function openModal(imageSrc, altText) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            
+            modalImage.src = imageSrc;
+            modalImage.alt = altText;
+            modal.classList.remove('hidden');
+            
+            // Prevent body scroll when modal is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('hidden');
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Prevent modal from closing when clicking on the image itself
+        document.getElementById('modalImage').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    </script>
+</body>
+</html>
